@@ -26,3 +26,31 @@ class Vehicle(models.Model):
     type = models.CharField(
         max_length=256,
     )
+
+
+class VehicleSchedule(models.Model):
+    "Generated Model"
+    vehicle_id = models.ForeignKey(
+        "home.Vehicle",
+        on_delete=models.CASCADE,
+        blank=True,
+        related_name="vehicleschedule_vehicle_id",
+    )
+    start_time = models.DateTimeField(
+        blank=True,
+    )
+    from_location = models.ForeignKey(
+        "home.Location",
+        on_delete=models.CASCADE,
+        blank=True,
+        related_name="vehicleschedule_from_location",
+    )
+    to_location = models.ForeignKey(
+        "home.Location",
+        on_delete=models.CASCADE,
+        blank=True,
+        related_name="vehicleschedule_to_location",
+    )
+    end_time = models.DateTimeField(
+        blank=True,
+    )

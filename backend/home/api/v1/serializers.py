@@ -1,5 +1,5 @@
 from django.contrib.auth import get_user_model
-from home.models import Location, Vehicle
+from home.models import Location, Vehicle, VehicleSchedule
 from django.http import HttpRequest
 from django.utils.translation import ugettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -85,4 +85,10 @@ class LocationSerializer(serializers.ModelSerializer):
 class VehicleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Vehicle
+        fields = "__all__"
+
+
+class VehicleScheduleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VehicleSchedule
         fields = "__all__"
