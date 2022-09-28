@@ -9,3 +9,20 @@ class Location(models.Model):
     name = models.CharField(
         max_length=256,
     )
+
+
+class Vehicle(models.Model):
+    "Generated Model"
+    name = models.CharField(
+        max_length=256,
+    )
+    code = models.SlugField(
+        max_length=50,
+    )
+    license_plate = models.CharField(
+        max_length=256,
+    )
+    capacity = models.IntegerField()
+    type = models.CharField(
+        max_length=256,
+    )

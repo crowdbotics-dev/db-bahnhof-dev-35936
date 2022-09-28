@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from home.models import Location
-from .serializers import LocationSerializer
+from home.models import Location, Vehicle
+from .serializers import LocationSerializer, VehicleSerializer
 from rest_framework import authentication
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from rest_framework.viewsets import ModelViewSet, ViewSet
@@ -41,3 +41,12 @@ class LocationViewSet(viewsets.ModelViewSet):
         authentication.TokenAuthentication,
     )
     queryset = Location.objects.all()
+
+
+class VehicleViewSet(viewsets.ModelViewSet):
+    serializer_class = VehicleSerializer
+    authentication_classes = (
+        authentication.SessionAuthentication,
+        authentication.TokenAuthentication,
+    )
+    queryset = Vehicle.objects.all()
