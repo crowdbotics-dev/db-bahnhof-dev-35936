@@ -1,3 +1,4 @@
+import { Slider } from "react-native-elements";
 import { Pressable } from "react-native";
 import { TextInput } from "react-native";
 import React from "react";
@@ -7,7 +8,10 @@ const Untitled2 = ({
   navigation
 }) => {
   return <View style={_styles.ehQkAXiO}>
-      <View style={_styles.HyNKfUVa}></View><View style={_styles.sHBOGfVE}></View><TextInput style={_styles.NzBSeTsH}></TextInput><Pressable onPress={() => navigation.navigate("addCardDetails")} style={_styles.IBynuSqq}><View style={_styles.kWQFPvOs}></View></Pressable></View>;
+      <View style={_styles.HyNKfUVa}></View><View style={_styles.sHBOGfVE}></View><TextInput style={_styles.NzBSeTsH}></TextInput><Pressable onPress={() => navigation.navigate("addCardDetails")} style={_styles.IBynuSqq}><View style={_styles.kWQFPvOs}></View></Pressable><Slider style={_styles.QJZScuLK} thumbStyle={{
+      height: 20,
+      width: 20
+    }} thumbTintColor="#0000FF" maximumValue={1} minimumValue={0}></Slider></View>;
 };
 
 export default Untitled2;
@@ -59,5 +63,12 @@ const _styles = StyleSheet.create({
   },
   IBynuSqq: {
     position: "unset"
+  },
+  QJZScuLK: {
+    left: 31,
+    top: 444,
+    position: "absolute",
+    width: 150,
+    height: 40
   }
 });
